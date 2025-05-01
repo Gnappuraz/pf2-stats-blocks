@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Pathfinder2eActions';
+  src: url('/src/fonts/Pathfinder2eActions.ttf') format('truetype');
+}
+
+.stat-block-preview {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #222;
+}
+
+.stat-block {
+  background: #ffffff;
+  border: 3px solid #222;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: none;
+}
+
+.stat-block .header {
+  display: flex;
+  justify-content: space-between;
+  color: #222;
+  padding: 8px 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Special Gothic Condensed One', monospace;
+  border-bottom: 2px solid #222;
+  margin-bottom: 12px;
+}
+
+.stat-block .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.stat-block .tag {
+    background: #c00;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.stat-block .section {
+}
+
+.stat-block .section-title {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: inline;
+}
+
+.stat-block .section-content {
+  display: inline;
+  margin-left: 8px;
+}
+
+.stat-block .abilities {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.stat-block .abilities div {
+  background: #ddd;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.stat-block .melee, 
+.stat-block .spell {
+  margin-left: 18px;
+  text-indent: -18px;
+}
+
+.stat-block .symbol {
+  font-family: 'Pathfinder2eActions';
+  font-weight: normal;
+  color: #222;
+  font-size: 1.5em;
+  margin-left: 4px;
+}
+
+.stat-block hr {
+  border: 0;
+  border-top: 2px solid #222;
+  margin: 12px 0;
+}
+
+@media print {
+  .stat-block-preview {
+    background: none;
+    padding: 0;
+  }
+  
+  .stat-block {
+    border: 2px solid #222;
+    box-shadow: none;
+    max-width: 100%;
+  }
+}
