@@ -26,6 +26,8 @@ const parseMarkdown = (text: string): string => {
     .replace(/_(.+?)_/g, '<em>$1</em>');
 };
 
+const capitalizeFirst = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 const StatBlockPreview: React.FC = () => {
   const { statBlock } = useStatBlock();
 
@@ -218,7 +220,7 @@ const StatBlockPreview: React.FC = () => {
           <>
             {statBlock.spells.innate && statBlock.spells.innate.length > 0 && (
               <div className="section">
-                <div className="section-title">{statBlock.spells.tradition || 'Divine'} Innate Spells</div>
+                <div className="section-title">{capitalizeFirst(statBlock.spells.tradition || 'Divine')} Innate Spells</div>
                 <div className="section-content" dangerouslySetInnerHTML={{
                   __html: `${statBlock.spells.dc ? `DC ${statBlock.spells.dc}` : ''}${
                     statBlock.spells.attack ? `; ${getModifierString(statBlock.spells.attack)} to hit` : ''
@@ -229,7 +231,7 @@ const StatBlockPreview: React.FC = () => {
 
             {statBlock.spells.focus && statBlock.spells.focus.length > 0 && (
               <div className="section">
-                <div className="section-title">{statBlock.spells.tradition || 'Divine'} Focus Spells</div>
+                <div className="section-title">{capitalizeFirst(statBlock.spells.tradition || 'Divine')} Focus Spells</div>
                 <div className="section-content" dangerouslySetInnerHTML={{
                   __html: `${statBlock.spells.dc ? `DC ${statBlock.spells.dc}` : ''}${
                     statBlock.spells.attack ? `; ${getModifierString(statBlock.spells.attack)} to hit` : ''
@@ -240,7 +242,7 @@ const StatBlockPreview: React.FC = () => {
 
             {statBlock.spells.rituals && statBlock.spells.rituals.length > 0 && (
               <div className="section">
-                <div className="section-title">{statBlock.spells.tradition || 'Divine'} Rituals</div>
+                <div className="section-title">{capitalizeFirst(statBlock.spells.tradition || 'Divine')} Rituals</div>
                 <div className="section-content" dangerouslySetInnerHTML={{
                   __html: `${statBlock.spells.dc ? `DC ${statBlock.spells.dc}` : ''}${
                     statBlock.spells.attack ? `; ${getModifierString(statBlock.spells.attack)} to hit` : ''
@@ -251,7 +253,7 @@ const StatBlockPreview: React.FC = () => {
 
             {statBlock.spells.prepared && statBlock.spells.prepared.length > 0 && (
               <div className="section">
-                <div className="section-title">{statBlock.spells.tradition || 'Divine'} Prepared Spells</div>
+                <div className="section-title">{capitalizeFirst(statBlock.spells.tradition || 'Divine')} Prepared Spells</div>
                 <div className="section-content" dangerouslySetInnerHTML={{
                   __html: `${statBlock.spells.dc ? `DC ${statBlock.spells.dc}` : ''}${
                     statBlock.spells.attack ? `; ${getModifierString(statBlock.spells.attack)} to hit` : ''
