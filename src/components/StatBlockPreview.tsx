@@ -18,7 +18,7 @@ const ActionIcon: React.FC<{ type: string }> = ({ type }) => {
 
 const parseMarkdown = (text: string): string => {
   if (typeof text !== 'string') {
-    return '';
+    return text+"";
   }
   return text
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
